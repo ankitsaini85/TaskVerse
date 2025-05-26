@@ -1,6 +1,6 @@
 
-const BACKEND_URL = 'https://taskverse-backend.onrender.com';
 import { getToken } from './auth';
+const BACKEND_URL = 'https://taskverse-backend.onrender.com';
 
 export const getAllUsers = async () => {
   const response = await fetch(`${BACKEND_URL}/api/admin/users`, {
