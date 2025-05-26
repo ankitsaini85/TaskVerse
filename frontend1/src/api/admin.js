@@ -1,9 +1,9 @@
 
+
 import { getToken } from './auth';
-const BACKEND_URL = 'https://taskverse-backend.onrender.com';
 
 export const getAllUsers = async () => {
-  const response = await fetch(`${BACKEND_URL}/api/admin/users`, {
+  const response = await fetch('http://localhost:5000/api/admin/users', {
     method: 'GET',
     headers: { Authorization: `Bearer ${getToken()}` },
   });
@@ -11,7 +11,7 @@ export const getAllUsers = async () => {
 };
 
 export const getAllTasks = async () => {
-  const response = await fetch(`${BACKEND_URL}/api/admin/tasks`, {
+  const response = await fetch('http://localhost:5000/api/admin/tasks', {
     method: 'GET',
     headers: { Authorization: `Bearer ${getToken()}` },
   });
@@ -19,7 +19,7 @@ export const getAllTasks = async () => {
 };
 
 export const getAllTeams = async () => {
-  const response = await fetch(`${BACKEND_URL}/api/admin/teams`, {
+  const response = await fetch('http://localhost:5000/api/admin/teams', {
     method: 'GET',
     headers: { Authorization: `Bearer ${getToken()}` },
   });
@@ -27,9 +27,9 @@ export const getAllTeams = async () => {
 };
 
 export const deleteUser = async (userId) => {
-  const response = await fetch(`${BACKEND_URL}/api/admin/user/${userId}`, {
+  const response = await fetch(`http://localhost:5000/api/admin/user/${userId}`, {
     method: 'DELETE',
     headers: { Authorization: `Bearer ${getToken()}` },
   });
   return await response.json();
-}; 
+};

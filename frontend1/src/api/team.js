@@ -1,7 +1,7 @@
 import { getToken } from './auth'; 
-const BACKEND_URL = 'https://taskverse-backend.onrender.com';
+
 export const createTeam = async (teamData) => {
-    const response = await fetch(`${BACKEND_URL}/api/teams`, {
+    const response = await fetch('http://localhost:5000/api/teams', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -13,7 +13,7 @@ export const createTeam = async (teamData) => {
 };
 
 export const deleteTeam = async () => {
-    const response = await fetch(`${BACKEND_URL}/api/teams`, {
+    const response = await fetch('http://localhost:5000/api/teams', {
         method: 'DELETE',
         headers: {
             'Authorization': `Bearer ${getToken()}`,
@@ -23,7 +23,7 @@ export const deleteTeam = async () => {
 };
 
 export const assignTask = async (taskData) => {
-    const response = await fetch(`${BACKEND_URL}/api/task/assign`, {
+    const response = await fetch('http://localhost:5000/api/task/assign', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -35,7 +35,7 @@ export const assignTask = async (taskData) => {
 };
 
 export const getTeamProgress = async () => {
-    const response = await fetch(`${BACKEND_URL}/api/team/progress`, {
+    const response = await fetch('http://localhost:5000/api/team/progress', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -46,7 +46,7 @@ export const getTeamProgress = async () => {
 };
 
 export const getTeamDetails = async () => {
-    const response = await fetch(`${BACKEND_URL}/api/team/details`, {
+    const response = await fetch('http://localhost:5000/api/team/details', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -56,7 +56,7 @@ export const getTeamDetails = async () => {
     return await response.json();
 };
 export const deleteTask = async (taskId) => {
-    const response = await fetch(`${BACKEND_URL}/api/task/${taskId}`, {
+    const response = await fetch(`http://localhost:5000/api/task/${taskId}`, {
         method: 'DELETE',
         headers: {
             'Authorization': `Bearer ${getToken()}`,
