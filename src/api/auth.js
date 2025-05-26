@@ -1,6 +1,6 @@
-
+const BACKEND_URL = 'https://taskverse-backend.onrender.com';
 export const login = async (email, password) => {
-  const response = await fetch('http://localhost:5000/api/login', {
+  const response = await fetch(`${BACKEND_URL}/api/login`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ email, password }),
@@ -19,7 +19,7 @@ export const login = async (email, password) => {
 
 export const signup = async (userData) => {
   try {
-    const response = await fetch('http://localhost:5000/api/signup', {
+    const response = await fetch(`${BACKEND_URL}/api/signup`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(userData),
