@@ -32,4 +32,4 @@ export const deleteUser = async (userId) => {
     headers: { Authorization: `Bearer ${getToken()}` },
   });
   return await response.json();
-};
+}; 
